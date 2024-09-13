@@ -1,0 +1,82 @@
+/* Container principal do componente */
+.ficha-pet-container {
+  background-color: #e8d1ff; /* Cor de fundo do quadrado */
+  color: white; /* Cor do texto */
+  padding: 20px; /* Espaçamento interno */
+  border-radius: 10px; /* Bordas arredondadas */
+  width: 90%; /* Ajusta a largura para 90% da tela */
+  max-width: 755px; /* Largura máxima */
+  margin: 20px auto; /* Centraliza o componente com margem superior/inferior */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+  text-align: center; /* Centraliza o texto dentro do container */
+  box-sizing: border-box; /* Inclui padding e borda na largura total */
+}
+
+/* Estilo do título "Código" */
+.codigo {
+  font-size: 22px; /* Ajusta o tamanho da fonte para melhor visualização em telas menores */
+  font-weight: bold; /* Peso da fonte */
+  margin-bottom: 20px; /* Margem inferior */
+}
+
+/* Estilo da ficha de informações do pet */
+.ficha {
+  font-size: 18px; /* Ajusta o tamanho da fonte para melhor legibilidade */
+  display: flex; /* Ativa o Flexbox */
+  flex-wrap: wrap; /* Permite que os itens se movam para a linha seguinte se necessário */
+  gap: 15px; /* Ajusta o espaçamento entre os itens */
+  justify-content: center; /* Centraliza os itens horizontalmente */
+}
+
+/* Estilo dos itens da ficha */
+.ficha p {
+  flex: 1 1 200px; /* Flex-grow, flex-shrink e base size */
+  display: flex; /* Ativa o Flexbox para itens individuais */
+  align-items: center; /* Alinha verticalmente os itens ao centro */
+  gap: 10px; /* Espaçamento entre o rótulo e o valor */
+  justify-content: center; /* Centraliza o conteúdo dentro de cada item */
+}
+
+/* Estilo do texto em negrito */
+.ficha p strong {
+  color: #ffffff; /* Cor do texto em negrito */
+}
+
+/* Media Queries para dispositivos menores */
+@media (max-width: 768px) {
+  .ficha-pet-container {
+      padding: 15px; /* Ajusta o padding em telas menores */
+  }
+
+  .codigo {
+      font-size: 20px; /* Ajusta o tamanho da fonte do título */
+  }
+
+  .ficha {
+      font-size: 16px; /* Ajusta o tamanho da fonte para telas menores */
+      gap: 10px; /* Ajusta o espaçamento entre os itens */
+  }
+
+  .ficha p {
+      flex: 1 1 150px; /* Ajusta o tamanho base para itens menores */
+  }
+}
+
+@media (max-width: 480px) {
+  .ficha-pet-container {
+      padding: 10px; /* Ajusta o padding para telas muito pequenas */
+  }
+
+  .codigo {
+      font-size: 18px; /* Ajusta o tamanho da fonte do título */
+  }
+
+  .ficha {
+      font-size: 14px; /* Ajusta o tamanho da fonte para telas menores */
+      gap: 5px; /* Ajusta o espaçamento entre os itens */
+  }
+
+  .ficha p {
+      flex: 1 1 100px; /* Ajusta o tamanho base para itens muito pequenos */
+  }
+}

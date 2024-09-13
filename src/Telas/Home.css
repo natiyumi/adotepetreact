@@ -1,0 +1,223 @@
+/* Estilo geral da Home */
+.Home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    padding-top: 60px; /* Espaço para compensar a altura do cabeçalho */
+    box-sizing: border-box; /* Garante que o padding não ultrapasse a tela */
+    overflow-x: hidden; /* Evita overflow horizontal em telas pequenas */
+  }
+  
+  /* Alinhamento horizontal da barra superior (menu, título e imagem) */
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10; /* Garante que o cabeçalho fique acima de outros conteúdos */
+    height: 60px; /* Definindo a altura do cabeçalho */
+    max-width: 100vw; /* Garante que o header não ultrapasse a largura da tela */
+    box-sizing: border-box; /* Inclui o padding na largura total */
+  }
+  
+  /* Estilo do título centralizado */
+  .titulo {
+    font-size: 30px;
+    margin: 0;
+    text-align: center;
+    flex-grow: 1;
+    white-space: nowrap; /* Evita quebra de linha no título */
+    overflow: hidden; /* Garante que o título não cause overflow */
+    text-overflow: ellipsis; /* Adiciona "..." se o texto for muito longo */
+  }
+
+   /* Estilo da imagem redonda */
+   .round-image {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  /* Estilo do botão de menu (hamburger) */
+  .hamburger {
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    color: #e8d1ff;
+    z-index: 10; /* Garante que o botão fique acima do menu */
+    position: relative; /* Necessário para o posicionamento do menu */
+  }
+  
+  /* Estilo do menu */
+  .menu {
+    display: none;
+    position: absolute;
+    top: 60px; /* Alinha o menu logo abaixo do cabeçalho */
+    left: 0; /* Alinha o menu à esquerda do botão de menu */
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 9;
+    width: 200px; /* Ajuste a largura conforme necessário */
+  }
+  
+  .menu.open {
+    display: block;
+  }
+  
+  .menu ul {
+    list-style: none; /* Remove a bolinha de listagem */
+    padding: 0;
+    margin: 0;
+    text-align: left;
+  }
+  
+  .menu li {
+    margin: 10px 0;
+  }
+  
+  .menu li a {
+    text-decoration: none;
+    color: black;
+    display: block; /* Garante que o link ocupe a largura total do menu */
+    padding: 5px 10px; /* Adiciona padding para melhorar a área clicável */
+  }
+  
+  .menu li a:hover {
+    background-color: #f0f0f0; /* Destaca o link ao passar o mouse */
+  }
+  
+  .search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+    margin-top: 60px; /* Espaço abaixo do header */
+    box-sizing: border-box;
+  }
+  
+  /* Estilo do campo de entrada (input) */
+  .search-input {
+    width: 60%;
+    max-width: 600px;
+    padding: 10px;
+    font-size: 16px;
+    border: 6px solid #e8d1ff; /* Borda da cor #e8d1ff */
+    border-radius: 30px; /* Bordas arredondadas */
+    outline: none;
+    box-sizing: border-box;
+    color: #333;
+  }
+  
+  /* Estilo do botão de pesquisa com ícone de lupa */
+  .search-button {
+    background-color: transparent;
+    border: none;
+    margin-left: -45px; /* Sobrepõe o botão com o campo */
+    cursor: pointer;
+    color: #e8d1ff; /* Cor do ícone de lupa */
+    font-size: 20px;
+  }
+  
+  .search-button i {
+    pointer-events: none;
+  }
+  
+  .buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Espaçamento entre os botões */
+    padding: 20px;
+  }
+  
+  /* Estilo dos botões */
+  .filter-button {
+    background-color: #e8d1ff; /* Cor de fundo dos botões */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 10px; /* Bordas arredondadas */
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .filter-button:hover {
+    background-color: #d1b3ff; /* Cor ao passar o mouse */
+  }
+  
+  .title {
+    width: 100%; /* O container ocupa a largura total */
+    padding: 20px;
+    display: flex; /* Adicionando flexbox */
+    justify-content: flex-start; /* Alinha o conteúdo à esquerda */
+  }
+  
+  .title h2 {
+    font-size: 32px;
+    color: #333;
+    margin: 40px;
+  }
+  
+  /* Media Queries para dispositivos menores */
+  @media (max-width: 768px) {
+    .header {
+      padding: 10px 15px; /* Ajusta o padding em telas menores */
+    }
+  
+    .titulo {
+      font-size: 24px; /* Reduz o tamanho da fonte */
+    }
+  
+    .search-input {
+      width: 80%;
+      font-size: 14px;
+    }
+  
+    .search-button {
+      font-size: 18px;
+    }
+  
+    .filter-button {
+      font-size: 14px;
+      padding: 15px 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .header {
+      padding: 10px 10px; /* Ajusta ainda mais o padding */
+    }
+  
+    .titulo {
+      font-size: 20px;
+    }
+  
+    .search-input {
+      width: 90%;
+      font-size: 12px;
+    }
+  
+    .search-button {
+      font-size: 16px;
+    }
+  
+    .filter-button {
+      font-size: 12px;
+      padding: 12px 15px;
+    }
+  }
+  
